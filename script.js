@@ -2,6 +2,7 @@ let dani=document.querySelector(".dani")
 let sati=document.querySelector(".sati")
 let minute=document.querySelector(".minute")
 let sekunde=document.querySelector(".sekunde")
+let datum=document.querySelectorAll(".datum")
 
 let trenutnoVrijeme={
     dani: "0",
@@ -17,12 +18,9 @@ let vrijemeMili = Math.floor( datum2.getTime() - datum1.getTime())*-1;
 console.log(vrijemeMili)
 
 const interval = setInterval(function() {
-    vrijemeMili=vrijemeMili-1000
-    
-    postaviVrijeme()
-   // console.log(trenutnoVrijeme.dani+" "+trenutnoVrijeme.sati+" "+trenutnoVrijeme.minute+" "+trenutnoVrijeme.sekunde)
-   console.log(trenutnoVrijeme.dani)
     promijeniVrijeme()
+    vrijemeMili=vrijemeMili-1000
+    postaviVrijeme()
 }, 1000)
 
 
@@ -39,6 +37,16 @@ function postaviVrijeme(){
 }
 
 function promijeniVrijeme(){
+    datum[3].classList.toggle("rotiranje")
+    if(trenutnoVrijeme.sekunde==0){
+        datum[2].classList.toggle("rotiranje")
+    }
+    if(trenutnoVrijeme.sekunde===0 && trenutnoVrijeme.minute===0){
+        datum[1].classList.toggle("rotiranje")
+    }
+    if(trenutnoVrijeme.sekunde===0 && trenutnoVrijeme.minute===0 && trenutnoVrijeme.sati===0){
+        datum[0].classList.toggle("rotiranje")
+    }
     dani.innerHTML=trenutnoVrijeme.dani
     sati.innerHTML=trenutnoVrijeme.sati
     minute.innerHTML=trenutnoVrijeme.minute

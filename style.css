@@ -42,6 +42,15 @@ h1{
     grid-template-columns: repeat(4,1fr);
     gap: 20px;
     text-align: center;
+    z-index: 40;
+}
+.vrijeme2{
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    text-align: center;
+    top: 41%;
 }
 .datum{
     padding: 30px;
@@ -63,5 +72,24 @@ p{
 }
 
 .log i:hover{
-    color: var(--svjCrvena)!important;
+    color: var(--svjCrvena);
+}
+
+
+
+.rotiranje {
+    animation: spin 1s;
+    box-shadow: none!important;
+}
+.crvenao{
+    background-color: red;
+}
+
+@keyframes spin { 
+    99% { 
+        transform:rotateX(180deg); 
+    } 
+    100% { 
+        transform:rotateX(360deg); 
+    } 
 }
