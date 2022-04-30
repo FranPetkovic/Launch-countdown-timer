@@ -10,10 +10,11 @@ let trenutnoVrijeme={
     sekunde: "0",
 }
 
-let datum1 = new Date("03/06/2022")
+let datum1 = new Date("05/01/2022")
 let datum2 = new Date()
 
-let vrijemeMili = Math.floor( datum2.getTime() - datum1.getTime());
+let vrijemeMili = Math.floor( datum2.getTime() - datum1.getTime())*-1;
+console.log(vrijemeMili)
 
 const interval = setInterval(function() {
     vrijemeMili=vrijemeMili-1000

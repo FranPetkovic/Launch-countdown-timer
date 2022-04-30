@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+:root{
+    --sivoPlava:hsl(237, 18%, 59%);
+    --svjCrvena:hsl(345, 95%, 68%);
+    --bijela:hsl(0, 0%, 100%);
+    --plava:hsl(236, 21%, 26%);
+    --tamnoPlava:hsl(235, 16%, 14%);
+    --crnoPlava:hsl(234, 17%, 12%);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--tamnoPlava);
+    background-image: url("images/pattern-hills.svg"),url("images/bg-stars.svg");
+    background-repeat: repeat-x, repeat;
+    background-size: 100%,auto;
+    background-position: bottom center,top center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Red Hat Text', sans-serif;
+}
+main{
+    max-width: 800px;
+    min-height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+h1{
+    color: var(--bijela);
+    letter-spacing: 8px;
+}
+.vrijeme{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    text-align: center;
+}
+.datum{
+    padding: 30px;
+    background: linear-gradient( #2a2a41 50%, #33354d 50%);
+    color: var(--svjCrvena);
+    font-size: 60px;
+    border-radius: 5px;
+    box-shadow: 5px 10px var(--crnoPlava);
+    width: 150px;
+}
+p{
+    color: var(--sivoPlava);
+    margin: 20px;
+    letter-spacing: 4px;
+}
+.log{
+    display: flex;
+    gap: 20px;
+}
+
+.log i:hover{
+    color: var(--svjCrvena)!important;
+}
