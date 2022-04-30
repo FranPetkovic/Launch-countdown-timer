@@ -10,7 +10,7 @@ let trenutnoVrijeme={
     sekunde: "0",
 }
 
-let datum1 = new Date("05/01/2022")
+let datum1 = new Date("05/15/2022")
 let datum2 = new Date()
 
 let vrijemeMili = Math.floor( datum2.getTime() - datum1.getTime())*-1;
@@ -29,8 +29,8 @@ const interval = setInterval(function() {
 function postaviVrijeme(){
     trenutnoVrijeme.sekunde=Math.floor((vrijemeMili/1000)%60)
     trenutnoVrijeme.minute=Math.floor((vrijemeMili/1000/60)%60)
-    trenutnoVrijeme.sati=Math.floor((vrijemeMili/1000/60/60)%60)
-    trenutnoVrijeme.dani=Math.floor((vrijemeMili/1000/60)%24)
+    trenutnoVrijeme.sati=Math.floor((vrijemeMili/1000/60/60)%24)
+    trenutnoVrijeme.dani=Math.floor((vrijemeMili/1000/60/60/24))
 
     if((trenutnoVrijeme.sekunde===0)&&(trenutnoVrijeme.minute===0)&&(trenutnoVrijeme.sati===0)&&(trenutnoVrijeme.dani==0))
     {
